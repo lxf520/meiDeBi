@@ -1,6 +1,6 @@
 $(() => {
-    $("header").load("./header.html");
-    $("footer").load("./footer.html");
+    $("header").load("../../../server/header.html");
+    $("footer").load("../../../server/footer.html");
     new Promise((resolve, reject) => {
         /*类别*/
         $.ajax({
