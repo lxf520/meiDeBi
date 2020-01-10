@@ -1,0 +1,93 @@
+[{
+        "slider": [{
+                "src": "https://p.mdbimg.com/slide_202001_5e12e21401b94ypuzcf.jpg",
+                "title": "某东年货节超级百亿补贴"
+            },
+            {
+                "src": "https://p.mdbimg.com/slide_202001_5e12e1ad6e7dfkshdvc.jpg",
+                "title": "国美年货大集"
+            },
+            {
+                "src": "https://p.mdbimg.com/slide_202001_5e0da207cb908ewktuy.jpg",
+                "title": "某猫年货每满300-30"
+            },
+            {
+                "src": "https://p.mdbimg.com/slide_201912_5df1fbab8ac9bmnitsb.png",
+                "title": "150元海淘转运礼包"
+            },
+            {
+                "src": "https://p.mdbimg.com/slide_201907_5d27de2dbb9b1cygtlj.jpg",
+                "title": "每日更新 某东领券"
+            },
+            {
+                "src": "https://p.mdbimg.com/slide_202001_5e12e21401b94ypuzcf.jpg",
+                "title": "某东年货节超级百亿补贴"
+            },
+            {
+                "src": "https://p.mdbimg.com/slide_202001_5e12e1ad6e7dfkshdvc.jpg",
+                "title": "国美年货大集"
+            },
+            {
+                "src": "https://p.mdbimg.com/slide_202001_5e0da207cb908ewktuy.jpg",
+                "title": "某猫年货每满300-30"
+            },
+            {
+                "src": "https://p.mdbimg.com/slide_201912_5df1fbab8ac9bmnitsb.png",
+                "title": "150元海淘转运礼包"
+            },
+            {
+                "src": "https://p.mdbimg.com/slide_201907_5d27de2dbb9b1cygtlj.jpg",
+                "title": "每日更新 某东领券"
+            }
+        ]
+    },
+    {
+        "seaShop": [
+
+            {
+                "src": "https://p.mdbimg.com/share_202001_5e150e90b3d03fedrwv.png-dpdisplay1",
+                "title": "Quaker Chewy 加大版早餐燕麦棒综合装36条",
+                "price": "￥71.66",
+                "source": "美国亚马逊"
+            },
+            {
+                "src": "https://p.mdbimg.com/share_202001_5e150daa0111cuzklgn.jpg-dpdisplay1",
+                "title": "Logitech G203 Prodigy RGB 游戏鼠标",
+                "price": "￥154.28",
+                "source": "美国亚马逊"
+            },
+            {
+                "src": "https://p.mdbimg.com/share_202001_5e149a06e25f1hbviqa.jpg-dpdisplay1",
+                "title": "Black Brown 1826 羊毛/羊绒混纺盖毯 两色可选",
+                "price": "￥220.43",
+                "source": "lordandtaylor"
+            }
+
+        ]
+    },
+    {
+        "hot": [
+
+            {
+                "src": "https://s.mdbimg.com/showdan_202001_5e0c1653a8720rgsmex.jpg-sdhot",
+                "title": "新春大礼包，过年装饰了更有气氛哦！"
+            },
+            {
+                "src": "https://cache.mdbimg.com/showdan_202001_5e0d827763eeffsnluc.png-sdhot",
+                "title": "爱护眼睛，从我做起！眼部护理液"
+            },
+            {
+                "src": "https://s.mdbimg.com/share_201912_5e0995a4c6c60fspmqx.jpg-sdhot",
+                "title": "冬天要有一双加绒的马丁靴"
+            },
+            {
+                "src": "https://s.mdbimg.com/share_202001_5e0c8e4d10620qwlkhu.jpg-sdhot",
+                "title": "欧莱雅16色樱桃盘——冬天里也能感受春天"
+            }
+
+        ]
+    },
+    {
+        "src": ["https://p.mdbimg.com/brand_201603_56dd04a57ca3epfgkbi.png", "https://p.mdbimg.com/brand_201601_568f79caa0318ptusdi.jpg", "https://p.mdbimg.com/brand_201601_568d13ad1a880iqfynu.jpg", "https://p.mdbimg.com/brand_201512_567260c3babdaxrtflc.jpg", "https://p.mdbimg.com/brand_201603_56f25099e0fedbfnwzp.png", "https://cache.mdbimg.com/share_201802_5a7bbf9c5618bmofkiv.jpg", "https://cache.mdbimg.com/share_201802_5a7bbda9b3917vdxaml.jpg", "https://cache.mdbimg.com/share_201709_59b60741bcb8cinsdwg.jpg", "https://p.mdbimg.com/brand_201601_568baa8de024aywktbx.jpg"]
+    }
+]
