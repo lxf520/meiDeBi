@@ -8,7 +8,6 @@ $(() => {
             url: "../../../server/class.json",
             dataType: "json",
             success: function (res) {
-                console.log(111);
 
                 let temp = res.map((ele, idx) => {
                     return `<a>${ele.title}</a>`
