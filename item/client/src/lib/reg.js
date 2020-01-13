@@ -150,6 +150,8 @@ $(()=>{
                 if (response.status == "success") {
                     alert(response.msg);
                     window.location.href = "../html/zhuye.html";
+                    Cookie.setItem('username',$.trim($(".phone").val()) );
+                    Cookie.setItem("password",md5($.trim($(".password").val())).substr(0, 10))
                 } else {
                     alert(response.msg);
                 }

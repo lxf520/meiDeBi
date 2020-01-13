@@ -123,14 +123,40 @@ body {
         #normalLogin,#quickLogin{
             display: none;
         }
-        .text{
+        .username{
             width: 250px;height: 50px;
-            padding-left: 50px;
+            padding-left: 60px;
             border: none;
+            font-size: 16px;
+        }
+        .password{
+            width: 250px;height: 50px;
+            margin-left: 1px;
+            padding-left: 10px;
+            border: none;
+            font-size: 16px;
+        }
+        #quickLogin{
+            position: relative;
+            .text{
+                width: 250px;height: 50px;
+                padding-left: 60px;
+                border: none;
+                font-size: 16px;
+            }
+            .phone{
+                padding-left: 10px;
+            }
+            .yzm{
+                position: absolute;
+                border: none;
+                width: 88px;height: 50px;line-height: 50px;
+            }
         }
     }
     .check{
-        width: 30px;height: 30px;
+        width: 20px;height: 20px;line-height: 20px;
+        margin-right: 5px;
         border-radius: 50%;
         padding: 2px;
     }
@@ -139,6 +165,27 @@ body {
     }
     .active{
         color: orangered;
+    }
+    .base(@bgc){
+        display: none;
+        position: absolute;
+        left: 50%;
+        top: 350px;
+        width: 120px;height: 40px;line-height: 40px;
+        text-align: center;
+        color: white;
+        background-color: @bgc;
+        span{
+            position: absolute;
+            width: 5px;height: 5px;
+            right: 5px;top: -15px;
+        }
+    }
+    .success{
+        .base(#195)
+    }
+    .error{
+        .base(orangered)
     }
 }
 

@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/sign.css">
     <script src="../lib/jquery-3.4.1.js"></script>
+    <script src="../lib/md5.js"></script>
+    <script src="../lib/login.js"></script>
+    <script src="../lib/cookie.js"></script>
 </head>
 
 <body>
@@ -22,7 +25,7 @@
         <div class="sign-container f14 sign-in">
             <div class="_head clearfix">
                 <div class="lab fl orange">欢迎登录</div>
-                <span class="fr">没有账号？<a href="/Register-index.html">马上注册</a></span>
+                <span class="fr">没有账号？<a href="./register.html">马上注册</a></span>
             </div>
             <div class="_body clearfix">
                 <div class="sign-form">
@@ -33,7 +36,7 @@
                         </div>
                         <div class="clearfix boxs">
                             <div id="normalLogin" class="block">
-                                <form>
+                                <div>
                                     <div class="item mb30">
                                         <i class="f-icon icon-head"></i>
                                         <input  class="username text" placeholder="用户名/手机号/邮箱"></input>
@@ -49,7 +52,7 @@
                                     <div class="sub-item">
                                         <button class="btn-submit">立即登录</button>
                                     </div>
-                                </form>
+                                </div>
                             </div>
                             <div id="quickLogin">
                                 <form action="/Login-domobilelogin" method="post" data-async>
@@ -59,8 +62,8 @@
                                     </div>
                                     <div class="item mb20 verify">
                                         <i class="f-icon icon-verify"></i>
-                                        <input required name="verify" class="text" placeholder="输入验证码"></input>
-                                        <button >发送验证码</button>
+                                        <input name="verify" class="text" placeholder="输入验证码"></input>
+                                        <button class="yzm">发送验证码</button>
                                     </div>
                                     <div class="clearfix remember mb30">
                                         <input class="check" type="checkbox" class="fl" name="cache" value="1">两周内自动登录</input>
@@ -71,6 +74,14 @@
                                     </div>
                                 </form>
                             </div>
+                        </div>
+                        <div class="success">
+                            登录成功
+                            <span>x</span>
+                        </div>
+                        <div class="error">
+                            用户名或密码错误
+                            <span>x</span>
                         </div>
                     </div class="leftBlock">
                     <dl class="sign-pub">
@@ -92,17 +103,6 @@
 
 
     <footer></footer>
-    <script>
-        $("footer").load("../../../server/footer.html");
-        
-        $(".tabTitle").children().click(function(){
-                console.log( $(this) , $(this).index() );
-                
-                $(this).addClass('active').siblings().removeClass('active');
-                $('.boxs').children().eq($(this).index()).addClass('block').siblings().removeClass('block')
-            })
-
-    </script>
 
 </body>
 

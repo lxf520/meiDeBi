@@ -8,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/index.css">
+    <script src="../lib/cookie.js"></script>
 </head>
 
 <body>
@@ -16,9 +17,10 @@
             <div class="fl l">
                 <span>欢迎来到没得比！</span>
                 <span id="login-state">
-                    <a href="file://login./" class="item" data-popover="login-menu">请登录 <i
-                            class="f-icon icon-bottom"></i></a>|
-                    <a href="file://login./Register-index.html" class="item">免费注册</a>
+                    <a href="./login.html" class="item" id="login">
+                        请登录 <i class="f-icon icon-bottom"></i>
+                    </a>|
+                    <a href="./register.html" class="item" id="reg">免费注册</a>
                 </span>
             </div>
             <div class="fr r">
@@ -82,6 +84,15 @@
 
         </div>
     </div>
+
+    <script>
+        let status = document.querySelector("#login");
+        if(Cookie.hasItem("username")){
+            let usn = Cookie.getItem("username");
+            status.innerHTML = usn;
+            
+        }
+    </script>
 </body>
 
 </html>

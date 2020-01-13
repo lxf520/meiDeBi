@@ -109,15 +109,46 @@ body {
 #leftBlock .boxs #quickLogin {
   display: none;
 }
-#leftBlock .boxs .text {
+#leftBlock .boxs .username {
   width: 250px;
   height: 50px;
-  padding-left: 50px;
+  padding-left: 60px;
   border: none;
+  font-size: 16px;
+}
+#leftBlock .boxs .password {
+  width: 250px;
+  height: 50px;
+  margin-left: 1px;
+  padding-left: 10px;
+  border: none;
+  font-size: 16px;
+}
+#leftBlock .boxs #quickLogin {
+  position: relative;
+}
+#leftBlock .boxs #quickLogin .text {
+  width: 250px;
+  height: 50px;
+  padding-left: 60px;
+  border: none;
+  font-size: 16px;
+}
+#leftBlock .boxs #quickLogin .phone {
+  padding-left: 10px;
+}
+#leftBlock .boxs #quickLogin .yzm {
+  position: absolute;
+  border: none;
+  width: 88px;
+  height: 50px;
+  line-height: 50px;
 }
 #leftBlock .check {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  margin-right: 5px;
   border-radius: 50%;
   padding: 2px;
 }
@@ -126,6 +157,44 @@ body {
 }
 #leftBlock .active {
   color: orangered;
+}
+#leftBlock .success {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 350px;
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: white;
+  background-color: #195;
+}
+#leftBlock .success span {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  right: 5px;
+  top: -15px;
+}
+#leftBlock .error {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 350px;
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: white;
+  background-color: orangered;
+}
+#leftBlock .error span {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  right: 5px;
+  top: -15px;
 }
 .sign-form .sub-item {
   margin-bottom: 45px;
