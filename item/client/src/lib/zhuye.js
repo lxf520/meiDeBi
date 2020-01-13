@@ -152,3 +152,64 @@ class Slider2{
         $(".side-box .smallCycle span").eq(this.index).addClass("currentBg").siblings().removeClass("currentBg")
     }
 }
+
+class Slider3{
+    constructor(data,source){
+        this.data = data;
+        this.source = source;
+        this.root = null;
+        this.index = 0;
+        this.sliderWidth = 296;
+        this.timer = null;
+    }
+    init(){
+        this.renderUI();
+        this.addClick();
+    }
+    renderUI(){
+        this.root = $("<div></div>");
+        let tp1 = this.data.map(ele=>{
+            return `<li class="item">
+            <a target="_blank"><span class="pic"><img  src=${ele.src}></span>
+                <span class="t gray3">${ele.title}</span>
+            </a>
+            <div class="clearfix f red">
+                <span class="fl">${ele.price}</span>
+            </div>
+        </li>`
+        }).join('');
+        this.root[0].innerHTML = `
+            <ul>${tp1}</ul>
+            <div class="page">
+                <span class="prev"><i class="f-icon icon-left"></i></span>
+                <span class="next"><i class="f-icon icon-right"></i></span>
+            </div>    
+        `
+        this.source.append(this.root);
+    }
+
+    addClick(){
+        this.root.find(".prev")[0].onclick = ()=>{
+            console.log(111);
+            
+            this.index--;
+            if(this.index < 0){
+                this.index = 4
+            }
+            let left = -this.index * this.sliderWidth + 'px';
+            $(".side-baicai ul").css("left",left);
+        }
+        this.root.find(".next")[0].onclick = ()=>{
+            this.next();
+        }
+    }
+    next(){
+        this.index++;
+        if(this.index > 4){
+            this.index = 0
+        }
+        let left = -this.index * this.sliderWidth + 'px';
+        $(".side-baicai ul").css("left",left);
+    }
+
+}

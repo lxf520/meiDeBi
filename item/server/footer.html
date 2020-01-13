@@ -199,15 +199,29 @@
 	// JSON.stringify(arr)
 
 	// 热门品牌
-	var boxs = document.querySelectorAll(".hot-sites li");
+	// var boxs = document.querySelectorAll(".hot-sites li");
+    // var arr = [];
+    // for (let i = 0; i < boxs.length; i++) {
+    //     var src = boxs[i].querySelector("img").src;
+    //     // var title = boxs[i].querySelector('.banner-txt').innerHTML;
+    //     var o = {
+    //         src 
+    //     }
+    //     arr.push(src)
+    // }
+	// JSON.stringify(arr)
+	
+	// 小轮播图
+	var boxs = document.querySelectorAll(".nj-scroll-wrap .nj-scroll-item");
     var arr = [];
     for (let i = 0; i < boxs.length; i++) {
         var src = boxs[i].querySelector("img").src;
-        // var title = boxs[i].querySelector('.banner-txt').innerHTML;
+		var title = boxs[i].querySelector('.t').innerHTML;
+		var price = boxs[i].querySelector(".red .fl").innerHTML;
         var o = {
-            src 
+            src,title,price
         }
-        arr.push(src)
+        arr.push(o)
     }
     JSON.stringify(arr)
 </script>

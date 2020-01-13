@@ -49,3 +49,40 @@ class ShopList{
         this.root.html(temp)
     }
 }
+
+class ShopList2{
+    constructor(data,root){
+        this.data = data
+        this.root = root
+    }
+    renderUI(){
+        let temp = this.data.map(ele=>{
+            return  `
+            <li>
+				<a class="inner" target="_blank">
+					<div class="ct-img">
+						<span>
+                            <img src=${ele.src}>
+                        </span>
+					</div>
+					<div class="tit f14">${ele.title}</div>
+					<div class="price">
+						<span class="red f14">¥<i class="num">${ele.price}</i></span>
+						<span class="old">¥${ele.price}</span> </div>
+				</a>
+				<div class="foot clearfix">
+					<a href="//www.meidebi.com/company/2.html" class="gray9 fr site" target="_blank">${ele.sell}</a>
+					<span class="fl">
+						<i class="f-icon icon-votesp">${ele.nice}</i>
+						<a href="//www.meidebi.com/g-3204922.html#comment" target="_blank" rel="nofollow"
+							class="f-icon icon-comment">0</a>
+					</span>
+				</div>
+				<a href="//www.meidebi.com/out/3204922.html" id="directlink" 
+					class="go m-button button-primary" target="_blank" rel="nofollow">直达链接</a>
+			</li>
+            `
+        }).join('');
+        this.root.html(temp)
+    }
+}

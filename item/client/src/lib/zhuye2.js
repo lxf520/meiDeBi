@@ -10,7 +10,7 @@ $(() => {
             success: function (res) {
 
                 let temp = res.map((ele, idx) => {
-                    return `<a>${ele.title}</a>`
+                    return `<a href=${idx<=14 ? './list.html' : ''}>${ele.title}</a>`
                 }).join("");
 
                 let t1 = res[0].cont.map(e => {

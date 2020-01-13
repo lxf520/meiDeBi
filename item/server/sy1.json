@@ -1,5 +1,7 @@
-[{
-        "slider": [{
+[
+    {
+        "slider": [
+            {
                 "src": "https://p.mdbimg.com/slide_202001_5e12e21401b94ypuzcf.jpg",
                 "title": "某东年货节超级百亿补贴"
             },
@@ -43,7 +45,6 @@
     },
     {
         "seaShop": [
-
             {
                 "src": "https://p.mdbimg.com/share_202001_5e150e90b3d03fedrwv.png-dpdisplay1",
                 "title": "Quaker Chewy 加大版早餐燕麦棒综合装36条",
@@ -62,12 +63,10 @@
                 "price": "￥220.43",
                 "source": "lordandtaylor"
             }
-
         ]
     },
     {
         "hot": [
-
             {
                 "src": "https://s.mdbimg.com/showdan_202001_5e0c1653a8720rgsmex.jpg-sdhot",
                 "title": "新春大礼包，过年装饰了更有气氛哦！"
@@ -84,10 +83,98 @@
                 "src": "https://s.mdbimg.com/share_202001_5e0c8e4d10620qwlkhu.jpg-sdhot",
                 "title": "欧莱雅16色樱桃盘——冬天里也能感受春天"
             }
-
         ]
     },
     {
-        "src": ["https://p.mdbimg.com/brand_201603_56dd04a57ca3epfgkbi.png", "https://p.mdbimg.com/brand_201601_568f79caa0318ptusdi.jpg", "https://p.mdbimg.com/brand_201601_568d13ad1a880iqfynu.jpg", "https://p.mdbimg.com/brand_201512_567260c3babdaxrtflc.jpg", "https://p.mdbimg.com/brand_201603_56f25099e0fedbfnwzp.png", "https://cache.mdbimg.com/share_201802_5a7bbf9c5618bmofkiv.jpg", "https://cache.mdbimg.com/share_201802_5a7bbda9b3917vdxaml.jpg", "https://cache.mdbimg.com/share_201709_59b60741bcb8cinsdwg.jpg", "https://p.mdbimg.com/brand_201601_568baa8de024aywktbx.jpg"]
+        "src": [
+            "https://p.mdbimg.com/brand_201603_56dd04a57ca3epfgkbi.png",
+            "https://p.mdbimg.com/brand_201601_568f79caa0318ptusdi.jpg",
+            "https://p.mdbimg.com/brand_201601_568d13ad1a880iqfynu.jpg",
+            "https://p.mdbimg.com/brand_201512_567260c3babdaxrtflc.jpg",
+            "https://p.mdbimg.com/brand_201603_56f25099e0fedbfnwzp.png",
+            "https://cache.mdbimg.com/share_201802_5a7bbf9c5618bmofkiv.jpg",
+            "https://cache.mdbimg.com/share_201802_5a7bbda9b3917vdxaml.jpg",
+            "https://cache.mdbimg.com/share_201709_59b60741bcb8cinsdwg.jpg",
+            "https://p.mdbimg.com/brand_201601_568baa8de024aywktbx.jpg"
+        ]
+    },
+    {
+        "baicai":[
+            {
+                "src": "https://p.mdbimg.com/share_202001_5e1c07aceeab1rmofie.jpg-dpdisplay1",
+                "title": " 吉祺 三维防撞护角 4只装 5.8元包邮（需用券）",
+                "price": "￥5.80"
+            },
+            {
+                "src": "https://p.mdbimg.com/share_202001_5e1c049a8e9a4lhxfpk.jpg-dpdisplay1",
+                "title": "植护 厨房纸巾 2层*50抽*5包 9.8元包邮（需用券）",
+                "price": "￥9.80"
+            },
+            {
+                "src": "https://p.mdbimg.com/share_201911_5dbe8eb3bbab0shebri.jpg-dpdisplay1",
+                "title": "竹月阁 桌布 PVC/布艺 40*60cm 2张 1.1元包邮（需用券）",
+                "price": "￥1.10"
+            },
+            {
+                "src": "https://p.mdbimg.com/share_202001_5e1ba743e9a1bvfluop.jpg-dpdisplay1",
+                "title": "colore.in 眼镜框 多款可选 6.9元包邮（需用券）",
+                "price": "￥6.90"
+            },
+            {
+                "src": "https://p.mdbimg.com/share_201912_5e0b3e14af1caepyiuh.jpg-dpdisplay1",
+                "title": " 晶湖 北大池湖盐 未加碘 不加抗结剂 400g*6袋 9.9元包邮（需用券）",
+                "price": "￥9.90"
+            },
+            {
+                "src": "https://p.mdbimg.com/share_201908_5d64ff0183e7doepizx.jpg-dpdisplay1",
+                "title": "手机桌面懒人支架",
+                "price": "￥1.10"
+            },
+            {
+                "src": "https://p.mdbimg.com/share_202001_5e1c07aceeab1rmofie.jpg-dpdisplay1",
+                "title": " 吉祺 三维防撞护角 4只装 5.8元包邮（需用券）",
+                "price": "￥5.80"
+            },
+            {
+                "src": "https://p.mdbimg.com/share_202001_5e1c049a8e9a4lhxfpk.jpg-dpdisplay1",
+                "title": "植护 厨房纸巾 2层*50抽*5包 9.8元包邮（需用券）",
+                "price": "￥9.80"
+            },
+            {
+                "src": "https://p.mdbimg.com/share_201911_5dbe8eb3bbab0shebri.jpg-dpdisplay1",
+                "title": "竹月阁 桌布 PVC/布艺 40*60cm 2张 1.1元包邮（需用券）",
+                "price": "￥1.10"
+            },
+            {
+                "src": "https://p.mdbimg.com/share_202001_5e1ba743e9a1bvfluop.jpg-dpdisplay1",
+                "title": "colore.in 眼镜框 多款可选 6.9元包邮（需用券）",
+                "price": "￥6.90"
+            }
+        ]
+    },
+    {
+        "热门商品" : [
+            {
+                "src": "https://p.mdbimg.com/share_202001_5e15e50ab77f9lqidcr.jpg-dpdisplay1",
+                "title": "PLUS会员！Three Squirrels 三只松鼠 国橙坚果大礼包 1398g ",
+                "price": "44.25",
+                "from": "京东"
+            }, {
+                "src": "https://p.mdbimg.com/share_201812_5c1315fe44676bzmrts.jpg-dpdisplay1",
+                "title": "某东PLUS会员： Be&amp;Cheery 百草味 原切牛肉条 五香牛肉条 50g",
+                "price": "5.18",
+                "from": "京东"
+            }, {
+                "src": "https://p.mdbimg.com/share_201812_5c12414d3a031spomeb.jpg-dpdisplay1",
+                "title": "某东PLUS会员： Hershey’s 好时 黑巧克力排块 210g",
+                "price": "13.95",
+                "from": "京东"
+            }, {
+                "src": "https://p.mdbimg.com/share_202001_5e1569355d325okczsu.png-dpdisplay1",
+                "title": "Member's Mark 美国盐焗开心果 1.13kg",
+                "price": "99.00",
+                "from": "京东"
+            }
+        ]
     }
 ]
