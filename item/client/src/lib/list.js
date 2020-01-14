@@ -14,17 +14,40 @@ $(()=>{
             for (let i = 0; i < count; i++) {
                 html += `<a class="num">${i+1}</a>`                
             }
-            $("#page").html(html);
+            let temp = `
+            <span id="prev" class="prev nj-icon nj-icon-left"  >上一页</span>
+            ${html}
+            <span id="next" class="next nj-icon nj-icon-right" >下一页</span>`
+            $("#page").html(temp);
 
             // 顺便加载第一页的商品信息
             getDataWithPage(1,type);
         }
     });
 
+    let currentPage = 1;
+
+    // 没办法拿到a标签的长度，计算不了最大页面的数值
+    // Array.prototype.slice.call(arr , $("#page")[0].children)
+    
     // 页面点击事件
     $("#page").on("click","a",function(){
         let index = $(this).index();
-        getDataWithPage(index+1,type)
+
+        currentPage = index;
+        getDataWithPage(index,type)
+    })
+
+    // 上一页和下一页
+    $("#page").on("click","span",function(e){
+
+        if( e.target.id == "next"){
+            getDataWithPage(currentPage+1,type);
+            currentPage++;
+        }else if(  e.target.id == "prev" ){
+            getDataWithPage(currentPage-1,type);
+            currentPage--;
+        }
     })
 
     // 排序类型
@@ -34,6 +57,7 @@ $(()=>{
         getDataWithPage(1,type);
     })
 
+    // 获取某一页的信息
     function getDataWithPage(index,type){
         $.ajax({
             type: "get",
@@ -46,10 +70,11 @@ $(()=>{
         });
     }
 
+    // 渲染商品
     function renderUI(data,idx){
         let temp = data.map(ele=>{
             return  `
-            <li>
+            <li data-id="${ele.id}">
 				<a class="inner" target="_blank">
 					<div class="ct-img">
 						<span>
@@ -69,7 +94,7 @@ $(()=>{
 							class="f-icon icon-comment">0</a>
 					</span>
 				</div>
-				<a href="//www.meidebi.com/out/3204922.html" id="directlink" 
+				<a id="directlink" 
 					class="go m-button button-primary" target="_blank" rel="nofollow">直达链接</a>
 			</li>
             `
@@ -80,6 +105,7 @@ $(()=>{
         $("#page").children("a").eq(idx-1).addClass("current").siblings().removeClass("current")
     }
 
+    // 侧边渲染
     $.ajax({
         type: "get",
         url: "../../../server/sy1.json",
@@ -114,5 +140,9 @@ $(()=>{
         },
     });
 
+    $(".share-list-grid ul").on("click","li",function(){
+        let id = $(this).data('id');
+        window.location.href = "./detail.html?id=" + id
+    })
 
 })

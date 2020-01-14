@@ -1,0 +1,184 @@
+.clearfix::after{content:""; display:block; height:0; overflow:hidden; visibility:hidden; clear:both;zoom:1;}
+.body{
+    width: 82%;
+    margin: auto;
+    a{
+        color: #999;
+    }
+    .top{
+        width: 100%;
+        height: 30px;
+        margin-bottom: 10px;
+        a{
+            float: left;
+            
+        }
+        span{float: left;margin: 0 3px; color: #999;  }
+    }
+
+    .leftBox{
+        background-color: #fff;
+        float: left;
+        width: 886px;
+        margin-right: 20px;
+        .detail{
+            width: 100%;
+            height: 380px;
+            .outbox{
+                margin: 25px;
+                float: left;
+                width: 300px;
+                height: 342px;
+                .imgbox{
+                    position: relative;
+                    height: 300px;
+                    border: 1px solid #ccc;
+                    text-align: center;
+                    
+                    span{
+                        position: absolute;
+                        top: 10px;left: 10px;
+                        font-size: 20px;
+                        color: white;
+                        width: 30px;
+                        height: 30px;
+                        background-color: red;
+                        z-index: 5;
+                    }
+                    &>img{
+                        position: absolute;
+                        top: 20px;
+                        left: 20px;
+                        width: 250px;height: 250px;
+                    }
+                    .mask{
+                        position: absolute;
+                        width: 100px;
+                        height: 100px;
+                        background-color: #195;
+                        z-index: 9;
+                        opacity: .8;
+                        display: none;
+                    }
+                    .fdj{
+                        display: none;
+                        width: 300px;
+                        height: 300px;
+                        background-color: #ccc;
+                        position: absolute;
+                        left: 320px;
+                        border: 1px solid #ccc;
+                        top: 0;overflow: hidden;
+                        img{
+                            position: absolute;
+                            width: 400px;
+                            
+                        }
+                    }
+                }
+                &>a{
+                    float: left;
+                    margin: 0 9px;
+                    font-size: 18px;
+                }
+                
+            }
+            .info{
+                margin-top: 25px;
+                margin-right: 25px;
+                width: 490px;
+                height: 300px;
+                float: right;
+                h2{
+                    font-size: 16px ;
+                }
+                h3{
+                    font-size: 24px;color: red; display: inline;
+                    margin-right: 10px;
+                }
+                .line{
+                    width: 100%;
+                    height: 1px;
+                    margin: 20px 0;
+                    background-color: #aaa;
+                }
+                .baoliao{
+                    span{float: right;}
+                }
+                .brand{
+                    margin-top: 20px;
+                    span{display: inline-block;
+                        padding: 1px 3px ;
+                        background-color: #ccc;
+                        border-radius: 5px;
+                        margin: 0 5px;
+                    }
+                }
+                .go{
+                    width: 160px;
+                    height: 50px;
+                    background-color: rgb(255, 121, 44);
+                    color: white;
+                    border-radius: 20px;
+                    line-height: 50px;
+                    padding: 0 10px;
+                    text-align: center;
+                    margin: 50px 0 0 10px;
+                }
+                
+            }
+        }
+        .box1{
+            margin-top: 20px;
+            height: 1700px;
+            width: 100%;
+            img{
+                width: 886px;
+            }
+        }
+    }
+    .rightBox1{
+        float: left;
+        width: 300px;
+        .like,.hot{
+            height: 629px;
+            background-color: #fff;
+            padding: 15px;
+            h1{
+                font-size: 20px;
+                padding-left: 10px;
+                border-left: 2px solid red;
+            }
+            .box li{
+                width: 284px;
+                height: 110px;
+                padding: 17px 0;
+                border-top: 1px solid #ccc;
+                img{
+                    width: 100px;float: left;
+                }
+                .box-r{
+                    margin-left: 110px;
+                    .title{
+                        font-size: 12px;
+                    }
+                    .price{
+                        margin:  10px 0;
+                        color: red;
+                        font-size: 16px;
+                    }
+                }
+            }
+
+
+
+        }
+        .hot{
+            height: 584px;
+            margin-top: 400px;
+            background-color: #fff;
+            padding: 15px;
+
+        }
+    }
+}

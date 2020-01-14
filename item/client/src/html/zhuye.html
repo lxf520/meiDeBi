@@ -16,7 +16,7 @@
 
 	<!--pc标识end-->
 	<script src="../lib/jquery-3.4.1.js"></script>
-	<script src="../lib/zhuye.js"></script>
+	<script src="../lib/slider.js"></script>
 	<script src="../lib/shop.js"></script>
 	<script src="../lib/zhuye2.js"></script>
 
@@ -213,14 +213,16 @@
 	
 	<script>
 		$(window).scroll(function(){
+			let box = $(".side-box").eq(1);
+			
             if($(window).scrollTop()>500){
-				$("nj-scroll").css({"position":"fixed","top":0});
-				$(".side-box:eq(2)").css({"margin-top":2000});
+				box.css({"position":"fixed","top":0,"margin-top":"0" });
+
 				if($(window).scrollTop()>1800){
-					$("nj-scroll").css({"position":"static"});
+					box.css({"position":"static","margin-top":"1200px"});
 				}
             }else{
-                $("nj-scroll").css({"position":"static"});
+                box.css({"position":"static"});
             }
         });
 	</script>

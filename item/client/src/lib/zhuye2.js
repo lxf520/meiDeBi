@@ -8,12 +8,13 @@ $(() => {
             url: "../../../server/class.json",
             dataType: "json",
             success: function (res) {
+                let arr = res[0].cont;
 
                 let temp = res.map((ele, idx) => {
                     return `<a href=${idx <= 14 ? './list.html' : ''}>${ele.title}</a>`
                 }).join("");
 
-                let t1 = res[0].cont.map(e => {
+                let t1 = arr.map(e => {
                     let t = e.arr3.map(ele => {
                         return `<a>${ele}</a>`
                     }).join('');
@@ -117,10 +118,10 @@ $(() => {
     })
 
     let p3 = new Promise(function (resolve, reject) {
-        //  第二个轮播图 
+        //  第二个轮播图 , 热门商品排行
         $.ajax({
             type: "get",
-            url: "../../../server/rank.json",
+            url: "../../../server/rank.php",
             dataType: "json",
             success: function (res) {
                 (new Slider2(res, 10000)).init()
@@ -171,8 +172,18 @@ $(() => {
 
             $("#page").on("click","a",function(){
                 let index = $(this).index();
+                
+                console.log(index);
+                
                 getDataWithPage(index+1,type);
             })
+
+            $(".share-list ul").on("click",".m-button",function(){
+                let id = $($(this).parent().parent().parent()).data('id');
+                window.location.href = "./detail.html?id=" + id
+            })
+
+        
         })
 
     function getDataWithPage(index, type) {
@@ -189,7 +200,7 @@ $(() => {
     function renderUI(data, idx) {
         let temp = data.map(ele => {
             return `
-            <li class="clearfix" >
+            <li class="clearfix" data-id=${ele.id}>
                 <div class="fl pic ct-img">
                     <a><img src=${ele.src}></a>
                 </div>
@@ -233,6 +244,7 @@ $(() => {
 
         $("#page a").eq(idx-1).addClass("current").siblings().removeClass("current")
     }
+
 
 
 })
