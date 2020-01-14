@@ -30,7 +30,7 @@
 
 	<div class="page-all clearfix">
 		<div class="crumb">
-			<a href="//www.meidebi.com">首页</a>
+			<a href="./zhuye.html">首页</a>
 			<a href="//www.meidebi.com/fenlei/3c-list" class="gray6">3C数码</a>
 		</div>
 
@@ -111,46 +111,38 @@
 					<span class="lab">排序：</span>
 					<div class="wrap">
 						<span class="fr list-style">
-							<a href="/fenlei/3c-list-0-0-0-0-0?dss=lb" rel="nofollow" class="f-icon icon-list "
-								title="列表模式"></a>
-							<a href="/fenlei/3c-list-0-0-0-0-0?dss=cc" rel="nofollow" class="f-icon icon-grid active"
-								title="橱窗模式"></a>
+							<a class="f-icon icon-list " title="列表模式"></a>
+							<a rel="nofollow" class="f-icon icon-grid active" title="橱窗模式"></a>
 						</span>
-						<span class="items">
-							<a href="/fenlei/3c-list-0-0-ctime-0-0" class="active">最新发布</a>
-							<i class="join">|</i>
-							<a href="/fenlei/3c-list-0-0-htime-0-0">最新精华</a>
-							<i class="join">|</i>
-							<a href="/fenlei/3c-list-0-0-fav-0-0">最受关注</a>
+						<span id="items" class="items">
+							<a data-type = "default"  class="active">最新发布</a><i class="join">|</i>
+							<a data-type = "dsc" >价格排序</a><i class="join">|</i>
+							<a data-type = "asc" >最受关注</a>
 						</span>
 						<label class="nj-input-checkbox">
-							<input type="checkbox" value="/fenlei/3c-list-0-0-0-1-0"
-								onchange="location.href=this.value">
+							<input type="checkbox" >
 							<span class="_holder"></span><span>不看过期</span>
 						</label>
 						<label class="nj-input-checkbox">
-							<input type="checkbox" value="/fenlei/3c-list-0-0-0-0-1"
-								onchange="location.href=this.value">
+							<input type="checkbox">
 							<span class="_holder"></span><span>只看精华</span>
 						</label> </div>
 				</div>
 			</div>
-			<!--filter-items-->
+
+			<!-- 商品列表 -->
 			<div class="list-area">
 
 				<div class="share-list-grid" data-autoload="maxPage:9">
 					<ul class="clearfix"></ul>
 					<div class="h-pages">
-						<div> <span class="current">1</span><a class="num" href="/fenlei/3c-list-0-0-0-0-0/p_2">2</a><a
+						<!-- <div> <span class="current">1</span><a class="num" href="/fenlei/3c-list-0-0-0-0-0/p_2">2</a><a
 								class="num" href="/fenlei/3c-list-0-0-0-0-0/p_3">3</a><a class="num"
-								href="/fenlei/3c-list-0-0-0-0-0/p_4">4</a><a class="num"
-								href="/fenlei/3c-list-0-0-0-0-0/p_5">5</a><a class="num"
-								href="/fenlei/3c-list-0-0-0-0-0/p_6">6</a><a class="num"
-								href="/fenlei/3c-list-0-0-0-0-0/p_7">7</a><a class="num"
-								href="/fenlei/3c-list-0-0-0-0-0/p_8">8</a><a class="num"
-								href="/fenlei/3c-list-0-0-0-0-0/p_9">9</a><a class="num"
 								href="/fenlei/3c-list-0-0-0-0-0/p_10">10</a> <a class="next nj-icon nj-icon-right"
-								rel="nofollow" href="/fenlei/3c-list-0-0-0-0-0/p_2">下一页</a></div>
+								rel="nofollow" href="/fenlei/3c-list-0-0-0-0-0/p_2">下一页</a></div> -->
+						<div id="page" class="page" style="width: 800px; height: 50px;">
+									<!-- <a href=""></a> -->
+						</div>
 					</div>
 				</div>
 			</div>
@@ -164,7 +156,7 @@
 					<span class="lab">白菜精选</span>
 				</div>
 				<div class="_body side-baicai">
-					<nj-scroll direction="x">
+					<nj-scroll>
 						<!-- <ul>
 							<li class="item">
 								<a href="//www.meidebi.com/g-3204952.html" target="_blank"><span class="pic"><img
@@ -182,6 +174,7 @@
 							<span class="next"><i class="f-icon icon-right"></i></span>
 						</div> -->
 					</nj-scroll>
+					
 				</div>
 			</div>
 			<!--side-box-->
@@ -198,6 +191,7 @@
 						<li class="ct-img"><a href="/company/2144.html" target='_blank'><img
 									src="static/picture/site_201711_5a15209f8221apmbwlt.jpg" alt=""></a></li> -->
 					</ul>
+					
 				</div>
 			</div>
 			<!--side-box-->
