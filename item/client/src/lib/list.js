@@ -145,4 +145,18 @@ $(()=>{
         window.location.href = "./detail.html?id=" + id
     })
 
+    window.onload = function(){
+        var menu = document.querySelector(".m-nav");
+        var mTop = menu.offsetTop;
+
+        window.onscroll = function () {
+            if (window.scrollY >= mTop) {
+                menu.classList.add("fix")
+
+            } else {
+                menu.classList.remove("fix")
+            }
+        }
+    }
+
 })

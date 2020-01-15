@@ -991,3 +991,8 @@ a#list {
     top: -35px;
     left: 50%
 }
+
+.fix {
+    position: fixed;
+    top: 0;left: 0;
+}

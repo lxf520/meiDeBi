@@ -1,6 +1,25 @@
 $(() => {
-    $("header").load("../../../server/header.html");
-    $("footer").load("../../../server/footer.html");
+    new Promise( function(resolve,reject ){
+        $("header").load("../../../server/header.html");
+        $("footer").load("../../../server/footer.html");
+        resolve()
+    })
+
+    // 吸顶
+    $(()=>{
+        var menu = document.querySelector(".m-nav");
+        var mTop = menu.offsetTop;
+
+        window.onscroll = function () {
+            if (window.scrollY >= mTop) {
+                menu.classList.add("fix")
+
+            } else {
+                menu.classList.remove("fix")
+            }
+        }
+    })
+
 
     let id = decodeURI(  window.location.search.slice(1) );
 
@@ -116,4 +135,7 @@ $(() => {
             $(".hot .box").html(temp);
         },
     });
+
+
+    
 })

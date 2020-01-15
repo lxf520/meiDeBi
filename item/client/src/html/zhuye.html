@@ -211,21 +211,7 @@
 	<!-- <include src="./footer.html"></include> -->
 	<footer></footer>
 	
-	<script>
-		$(window).scroll(function(){
-			let box = $(".side-box").eq(1);
-			
-            if($(window).scrollTop()>500){
-				box.css({"position":"fixed","top":0,"margin-top":"0" });
 
-				if($(window).scrollTop()>1800){
-					box.css({"position":"static","margin-top":"1200px"});
-				}
-            }else{
-                box.css({"position":"static"});
-            }
-        });
-	</script>
 </body>
 
 </html>

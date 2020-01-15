@@ -28,7 +28,7 @@
                 <a href="file://www.meidebi.com/appplugin.html"><i class="f-icon icon-mobile orange"></i>APP下载</a> |
                 <a href="file://www.meidebi.com/company/">商城导航</a> |
                 <a href="file://www.meidebi.com/brand/">品牌导航</a> |
-                <span class="link orange" data-popup="checkin" ><span class="orange"><i
+                <span class="link orange" data-popup="checkin"><span class="orange"><i
                             class="f-icon icon-sign"></i>每日一签</span></span>
             </div>
         </div>
@@ -52,8 +52,7 @@
                 </ul>
             </div>
             <div class="coupon-channel fl">
-                <a class="bg" href="//quan.meidebi.com" 
-                    target="_blank"></a>
+                <a class="bg" href="//quan.meidebi.com" target="_blank"></a>
                 <span class="t">已帮比友找到 <span class="red">96,119,759</span> 张券</span>
             </div>
         </div>
@@ -87,11 +86,13 @@
 
     <script>
         let status = document.querySelector("#login");
-        if(Cookie.hasItem("username")){
+        if (Cookie.hasItem("username")) {
             let usn = Cookie.getItem("username");
             status.innerHTML = usn;
-            
+
         }
+
+        
     </script>
 </body>
 

@@ -170,20 +170,20 @@ $(() => {
                 }
             });
 
-            $("#page").on("click","a",function(){
+            $("#page").on("click", "a", function () {
                 let index = $(this).index();
-                
+
                 console.log(index);
-                
-                getDataWithPage(index+1,type);
+
+                getDataWithPage(index + 1, type);
             })
 
-            $(".share-list ul").on("click",".m-button",function(){
+            $(".share-list ul").on("click", ".m-button", function () {
                 let id = $($(this).parent().parent().parent()).data('id');
                 window.location.href = "./detail.html?id=" + id
             })
 
-        
+
         })
 
     function getDataWithPage(index, type) {
@@ -242,7 +242,37 @@ $(() => {
         }).join('');
         $(".share-list>ul").html(temp)
 
-        $("#page a").eq(idx-1).addClass("current").siblings().removeClass("current")
+        $("#page a").eq(idx - 1).addClass("current").siblings().removeClass("current")
+    }
+
+    $(window).scroll(function () {
+        let box = $(".side-box").eq(1);
+
+        if ($(window).scrollTop() > 500) {
+            box.css({ "position": "fixed", "top": 0, "margin-top": "0" });
+
+            if ($(window).scrollTop() > 1800) {
+                box.css({ "position": "static", "margin-top": "1200px" });
+            }
+        } else {
+            box.css({ "position": "static" });
+        }
+
+
+    });
+
+    window.onload = function(){
+        var menu = document.querySelector(".m-nav");
+        var mTop = menu.offsetTop;
+
+        window.onscroll = function () {
+            if (window.scrollY >= mTop) {
+                menu.classList.add("fix")
+
+            } else {
+                menu.classList.remove("fix")
+            }
+        }
     }
 
 
