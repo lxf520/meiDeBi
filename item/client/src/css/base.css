@@ -2257,3 +2257,19 @@ body .m-header .search, body .m-header .shopcar a {
     max-width: 100%;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, .3)
 }
+
+
+/* 自己补充 */
+.search{
+    position: relative;
+}
+#searchBlock{
+    position: absolute;
+    width: 410px;
+    min-height: 50px;
+    top: 44px;
+    left: 40px;
+    background-color: #fff;
+    z-index: 99;
+    display: none;
+}

@@ -20,6 +20,7 @@
                     <a href="./login.html" class="item" id="login">
                         请登录 <i class="f-icon icon-bottom"></i>
                     </a>|
+                    <a id="outLogin" href="./login.html" style="color:red">退出</a>
                     <a href="./register.html" class="item" id="reg">免费注册</a>
                 </span>
             </div>
@@ -38,11 +39,14 @@
         <div class="page-all clearfix">
             <div class="fl logo"><a href="//www.meidebi.com"></a></div>
             <div class="search fl">
-                <form action="//www.meidebi.com/Search" data-search autocomplete="true">
+                <form action="//www.meidebi.com/Search"  autocomplete="true">
                     <i class="f-icon icon-search"></i>
-                    <input type="text" name="keyword" value="面膜" class="text" placeholder="搜一下看看~~" />
+                    <input id="inputValue" type="text" name="keyword" value="电" class="text" placeholder="搜一下看看~~" />
                     <button class="btn">搜索</button>
                 </form>
+                <ul id="searchBlock">
+                    
+                </ul>
                 <ul class="hot-search fl">
                     <li><span class="gray9">TA们都在搜：</span></li>
                     <li><a href="//www.meidebi.com/Search?keyword=保暖内衣">保暖内衣</a></li>
@@ -89,9 +93,43 @@
         if (Cookie.hasItem("username")) {
             let usn = Cookie.getItem("username");
             status.innerHTML = usn;
-
         }
 
+
+
+        // 搜索框
+        let ul = document.querySelector('#searchBlock');
+        let input = document.querySelector('#inputValue');
+
+        function fn(res){
+            let data = res.g || [];
+            ul.innerHTML = data.map(ele=>`<li>${ele.q}</li>`).join('');
+        }
+        input.oninput = function(){
+            let val = this.value;
+            ul.style.display = 'block';
+
+            let nowScript = document.querySelector("#only")
+            if(nowScript){
+                document.body.removeChild(nowScript)
+            }
+
+            let script = document.createElement("script");
+            script.id = 'only'
+            script.src = 'https://www.baidu.com/sugrec?callback=fn&prod=pc_hao123&wd=' + val;
+            document.body.appendChild(script)
+        }
+
+        input.onblur = function(){
+            ul.style.display = 'none';
+        }
+        
+
+        // 退出登录
+        let out = document.querySelector("#outLogin");
+        out.onclick = function(){
+            Cookie.removeItem('password');
+        }
         
     </script>
 </body>
