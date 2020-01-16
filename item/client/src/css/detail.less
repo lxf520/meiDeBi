@@ -61,6 +61,7 @@
                         display: none;
                     }
                     .fdj{
+                        z-index: 5;
                         display: none;
                         width: 300px;
                         height: 300px;
@@ -72,7 +73,6 @@
                         img{
                             position: absolute;
                             width: 400px;
-                            
                         }
                     }
                 }
@@ -114,12 +114,38 @@
                         margin: 0 5px;
                     }
                 }
+                .num{
+                    position: relative;
+                    float: left;
+                    width: 60px;
+                    height: 45px;
+                    margin: 50px 0 0 0px;
+                    input{
+                        width: 39px ;
+                        height: 40px ;
+                        text-align: center;
+                    }
+                    a{
+                        position: absolute;
+                        right: 0;
+                        width: 15px;
+                        height: 22px;
+                        text-align: center;
+                        border: 1px solid #ccc;
+                    }
+                    .add{
+                        top: 0;
+                    }
+                    .remove{
+                        bottom: 0;
+                    }
+                }
                 .go{
+                    float: left;
                     width: 160px;
                     height: 50px;
                     background-color: rgb(255, 121, 44);
                     color: white;
-                    border-radius: 20px;
                     line-height: 50px;
                     padding: 0 10px;
                     text-align: center;

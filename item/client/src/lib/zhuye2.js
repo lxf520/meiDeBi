@@ -1,6 +1,7 @@
 $(() => {
     $("header").load("../../../server/header.html");
     $("footer").load("../../../server/footer.html");
+
     new Promise((resolve, reject) => {
         /*类别*/
         $.ajax({
@@ -63,8 +64,8 @@ $(() => {
         });
     })
 
+    //  海淘商品渲染 
     let p1 = new Promise(function (resolve, reject) {
-        //  海淘商品渲染 
         $.ajax({
             type: "get",
             url: "../../../server/sy1.json",
@@ -91,8 +92,8 @@ $(() => {
         });
     })
 
+    //  手风琴效果 
     let p2 = new Promise(function (resolve, reject) {
-        //  手风琴效果 
         $.ajax({
             type: "get",
             url: "../../../server/sy1.json",
@@ -117,8 +118,8 @@ $(() => {
         });
     })
 
+    //  第二个轮播图 , 热门商品排行
     let p3 = new Promise(function (resolve, reject) {
-        //  第二个轮播图 , 热门商品排行
         $.ajax({
             type: "get",
             url: "../../../server/rank.php",
@@ -130,8 +131,8 @@ $(() => {
         });
     })
 
+    //  热门品牌 
     let p4 = new Promise(function (resolve, reject) {
-        //  热门品牌 
         $.ajax({
             type: "get",
             url: "../../../server/sy1.json",
@@ -148,8 +149,8 @@ $(() => {
     })
 
     Promise.all([p1, p2, p3, p4])
+        //  商品列表   
         .then(function () {
-            //  商品列表   
 
             let type = "default";
             // 先根据数据总量/页面商品数量确定多少个页面
@@ -245,6 +246,7 @@ $(() => {
         $("#page a").eq(idx - 1).addClass("current").siblings().removeClass("current")
     }
 
+    // 侧边吸顶
     $(window).scroll(function () {
         let box = $(".side-box").eq(1);
 
@@ -261,7 +263,8 @@ $(() => {
 
     });
 
-    window.onload = function(){
+    // 导航吸顶
+    $(() => {
         var menu = document.querySelector(".m-nav");
         var mTop = menu.offsetTop;
 
@@ -272,9 +275,19 @@ $(() => {
             } else {
                 menu.classList.remove("fix")
             }
+
+            
+            if (window.scrollY > 1000) {
+                $('.goTop').css("display", 'block')
+            } else {
+                $('.goTop').css("display", 'none')
+            }
         }
-    }
-
-
+    })
+        
+    // 返回顶部按钮
+    $('.goTop').click(function () {
+        $('html,body').animate({ scrollTop: '0' }, 500);
+    })
 
 })

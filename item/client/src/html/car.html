@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 这一行的作用的允许访问图片，不加的话所有图片请求都是403 -->
+    <meta name="referrer" content="no-referrer" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="../lib/jquery-3.4.1.js"></script>
+    <script src="../lib/cookie.js"></script>
+    <script src="../lib/car.js"></script>
+
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/car.css">
+</head>
+
+<body>
+    <header class="m-nav">
+        <div class="page-all clearfix">
+            <ul class="fl">
+                <li class="active"><a href="./zhuye.html">首页</a></li>
+                <li class=""><a href="//www.meidebi.com/mao/">猫实惠</a></li>
+
+                <li class="" data-popover="nav-menu-youhui">
+
+                    <a href="//www.meidebi.com/guonei/">优惠<i class="f-icon icon-bottom"></i></a> </li>
+                <li data-popover="nav-menu-haitao">
+
+                    <a href="//www.meidebi.com/haitao/">海淘<i class="f-icon icon-bottom"></i></a> </li>
+
+                <li><a href="//www.meidebi.com/original/">原创</a>
+                </li>
+                <li><a href="//www.meidebi.com/fuli/">比友福利</a>
+                </li>
+                <li><a href="//www.meidebi.com/onekeyhaitao/">一键海淘</a></li>
+                <li data-popover="nav-menu-share">
+                    <a href="//share.meidebi.com/baoliao/">爆料投稿<i class="f-icon icon-bottom"></i></a> </li>
+            </ul>
+
+        </div>
+    </header>
+
+    <div class="bigbox">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"><input type="checkbox" id="check"> 全选</th>
+                    <th scope="col">商品</th>
+                    <th scope="col">单价</th>
+                    <th scope="col">数量</th>
+                    <th scope="col">小计</th>
+                    <th scope="col">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <!-- <tr>
+                    <th scope="row"><input type="checkbox"></th>
+                    <td>
+                        <div class="shop">
+                            <img src="https://p.mdbimg.com/share_201909_5d70612b623fenxzpqc.jpg-dpdisplay1" alt="">
+                            <p>HONOR 荣耀 MagicBook Pro 16.1英寸笔记本电脑（R5 3550H、16GB、512GB、100%sRGB、Win10系统）</p>
+                            <div>desc</div>
+                        </div>
+                    </td>
+                    <td class="price">￥ <span id="price"> 99.8 </span> </td>
+                    <td>
+                        <div class="num">
+                            <a class="prev">-</a>
+                            <input type="text" value="1">
+                            <a class="next">+</a>
+                        </div>
+                    </td>
+                    <td class="total">￥ <span id="money">money</span></td>
+                    <td class="delete">删除</td>
+                </tr> -->
+            </tbody>
+        </table>
+
+
+    </div>
+    <div class="bottomBlock">
+        <div class="center">
+            <input id="check2" type="checkbox"> 
+            <span>全选</span>
+            <a href="">删除所选商品</a>
+            <a href="">清空购物车</a>
+
+            <div class="rightPart">
+                <div class="choose">已选择<span>2</span>件商品</div>
+                <div class="money">总价￥ <span>$100</span></div>
+                <div class="spend"> 去结算 </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>

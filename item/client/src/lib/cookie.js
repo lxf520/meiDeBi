@@ -1,4 +1,4 @@
-let Cookie = {
+var Cookie = {
     getItem(name) {
         let cookies = document.cookie.split("; ");
 
