@@ -1,6 +1,4 @@
 $(() => {
-    // let carInfo = JSON.parse( Cookie.getItem('carInfo')) ;
-    let tempData;
 
     $.ajax({
         type: "get",
@@ -9,19 +7,17 @@ $(() => {
         success: function (res) {
             console.log(res);
             renderUI(res);
-
-            add(); reduce(); remove();
+            check()
             computedTotalPrice();
-            // checkBox();
         }
     });
 
-    function renderUI(res){
-        tempData = res;
-            let html = res.map((ele) => {
-                return `
+    function renderUI(res) {
+        let html = res.map((ele) => {
+            // ${ele.isActive == 1 ? "checked" : ""}
+            return `
                 <tr data-goodid=${ele.goodid}>
-                    <th scope="row"><input ${ele.isActive==1 ? "checked" : ""} type="checkbox"></th>
+                    <th scope="row"><input ${ele.isActive == 1 ? "checked" : ""} type="checkbox"></th>
                     <td>
                         <div class="shop">
                             <img src=${ele.src} alt="">
@@ -40,135 +36,77 @@ $(() => {
                     <td class="delete">删除</td>
                 </tr>
                     `
-            }).join('');
+        }).join('');
 
-            $("tbody").html(html);
+        $("tbody").html(html);
     }
 
-    // function checkBox(){
-    //     $("input[type='checkbox']").click(function(){
+    // 点击增加
+    $(".table").on('click', ".next", function () {
 
-    //         let goodid = $(this).parent().data("goodid");
+        let inp = $(this).parent().find('input')[0];
+        inp.value++;
+        let goodid = $(this).parents('tr').data("goodid");
 
-    //         let status;
-    //         if($(this).is(':checked')){
-    //             status = 1
-    //         }else{
-    //             status = 0
-    //         }
-    //         console.log(status);
-            
-            
-    //         $.ajax({
-    //             type: "get",
-    //             url: "../../../server/checkBox.php",
-    //             data: `goodid=${goodid}&status=${status}`,
-    //             dataType: "json",
-    //             success: function (res) {
+        $.ajax({
+            type: "get",
+            url: "../../../server/addClick.php",
+            data: `goodid=${goodid}`,
+            dataType: "json",
+            success: function (res) {
+                renderUI(res);
 
-    //                 renderUI(res);
-                    
-    //                 console.log(tempData);
-                    
-    //                 computedTotalPrice();
-    //                 add(); reduce(); remove();checkBox();
-    //             }
-    //         });
-    //     })
-    // }
-
-    function add() {
-        $(".next").click(function () {
-            
-            let inp = $(this).prev()[0]
-            inp.value++;
-
-            // let price = $(this).parent().parent().parent().find('#price')[0].innerText;
-            // let total = (price * (inp.value)).toFixed(2)
-
-            let goodid = $(this).parent().parent().parent().data("goodid");
-
-            $.ajax({
-                type: "get",
-                url: "../../../server/addClick.php",
-                data: `goodid=${goodid}`,
-                dataType: "json",
-                success: function (res) {
-                    console.log(res);
-
-                    renderUI(res);
-                    
-                    computedTotalPrice();
-                    add(); reduce(); remove();
-                }
-            });
-        })
-    }
-
-    function reduce() {
-        $(".prev").click(function () {
-            if ($(this).next()[0].value == 1) {
-                return
+                computedTotalPrice();
             }
-            $(this).html('-')
-
-            let inp = $(this).next()[0]
-            inp.value--;
-
-            // let price = $(this).parent().parent().parent().find('#price')[0].innerText;
-            // let total = (price * (inp.value)).toFixed(2)
-
-            let goodid = $(this).parent().parent().parent().data("goodid");
-            
-            $.ajax({
-                type: "get",
-                url: "../../../server/reduceClick.php",
-                data: `goodid=${goodid}`,
-                dataType: "json",
-                success: function (res) {
-
-                    renderUI(res);
-                    
-                    computedTotalPrice()
-                    
-                    add(); reduce(); remove();
-                }
-            });
-
         })
-    }
+    })
+
+    // 点击减少
+    $(".table").on('click', ".prev", function () {
+        if ($(this).parent().find('input').val() == 1) {
+            return
+        }
+        $(this).html('-')
+
+        let inp = $(this).parent().find('input').val()
+        inp.value--;
+        let goodid = $(this).parents('tr').data("goodid");
+
+        $.ajax({
+            type: "get",
+            url: "../../../server/reduceClick.php",
+            data: `goodid=${goodid}`,
+            dataType: "json",
+            success: function (res) {
+                renderUI(res);
+                computedTotalPrice()
+            }
+        });
+
+    })
 
     // 删除
-    function remove(){
-        $(".delete").click(function(){
-            console.log(111);
-            
-            let goodid = $(this).parent().data("goodid");
-    
-            $.ajax({
-                type: "get",
-                url: "../../../server/removeCart.php",
-                data: `goodid=${goodid}`,
-                dataType: "json",
-                success: function (res) {
-    
-                    renderUI(res);
-                    
-                    computedTotalPrice();
-                    add(); reduce();
-                    remove()
-                }
-            });
-        })
-    }
+    $(".table").on('click', ".delete", function () {
+        let goodid = $(this).parent().data("goodid");
+        $.ajax({
+            type: "get",
+            url: "../../../server/removeCart.php",
+            data: `goodid=${goodid}`,
+            dataType: "json",
+            success: function (res) {
+                renderUI(res);
+                computedTotalPrice();
+            }
+        });
+    })
 
     $("#check").click(function () {
         if ($("#check").is(':checked')) {
             $("input[type='checkbox']").prop("checked", true)
         } else {
             $("input[type='checkbox']").prop("checked", false)
-
         }
+        computedTotalPrice()
     })
     $("#check2").click(function () {
         if ($("#check2").is(':checked')) {
@@ -176,19 +114,63 @@ $(() => {
         } else {
             $("input[type='checkbox']").prop("checked", false)
         }
+        computedTotalPrice()
     })
 
-    // 计算总价
-    function computedTotalPrice() {
-        let totalPrice = 0
-        tempData.forEach(ele => {
-            if (ele.isActive == 1) {
-                totalPrice += ele.total * 1;
-            }
+
+    $("tbody").on('click', "input[type='checkbox']", function () {
+        let isCheck = $(this).is(":checked");
+        console.log(this);
+        computedTotalPrice()
+    })
+
+    // 被动
+    $("tbody").on('click', "input[type='checkbox']", function () {
+        // 检查当前店铺中是否所有的商品都有被勾选
+        let all = $(this).parents("tbody").find("input[type='checkbox']");
+
+        /* 如果每个都被选中，那么返回的就是true */
+        let flag = all.toArray().every(function (ele) {
+            return $(ele).is(":checked") == true;
         });
-        $(".money span").html(totalPrice);
+
+        $("#check").prop("checked", flag);
+        $("#check2").prop("checked", flag);
+        computedTotalPrice();
+    });
+
+    function check(){
+        let all = $("tbody").find("input[type='checkbox']");
+
+        /* 如果每个都被选中，那么返回的就是true */
+        let flag = all.toArray().every(function (ele) {
+            return $(ele).is(":checked") == true;
+        });
+
+        $("#check").prop("checked", flag);
+        $("#check2").prop("checked", flag);
     }
 
+
+    /* 封装提供一个函数(计算总数量和总价格) */
+    /* 逻辑：先获取所有商品标签，遍历这些标签，每循环一次就检查当前标签是否被勾选如果被勾选那么就累加数量和价格 */
+    function computedTotalPrice() {
+        let totalCount = 0;
+        let totalPrice = 0;
+        $("tbody").find("tr").each(function () {
+            let isCheck = $(this).find("input[type='checkbox']").is(":checked");
+            if (isCheck) {
+                let currentNum = $(this).find(".num input").val() * 1;
+                let currentPrice = $(this).find("#price").text() * 1;
+
+                totalCount += currentNum;
+                totalPrice += currentNum * currentPrice;
+            }
+        })
+
+        $(".choose span").text(totalCount);
+        $(".money span").text(totalPrice + "元");
+    }
 
 
 })

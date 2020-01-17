@@ -53,7 +53,7 @@ $(()=>{
         let val = $(this).val();
         let reg = /^[a-zA-Z0-9]{6,15}$/;
 
-        var hasNumber  = false; hasbig = false; hassmall = false;
+        var hasNumber  = false, hasbig = false, hassmall = false;
         
         if(reg.test(val)){
             psw1 = 1;
